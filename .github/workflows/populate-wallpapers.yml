@@ -51,6 +51,8 @@ jobs:
         run: |
           set -euo pipefail
           max_batches=12
+          consecutive_empty_batches=0
+          max_consecutive_empty_batches=3
           for ((batch=1; batch<=max_batches; batch++)); do
             echo "Starting Volume 03 acquisition batch ${batch}/${max_batches}"
             report_file="$RUNNER_TEMP/fenrir-volume-03-batch-${batch}.json"
@@ -86,8 +88,14 @@ jobs:
 
             echo "Committed batch ${batch}: ${new_images} new wallpapers."
             if [ "$new_images" -eq 0 ]; then
-              echo "No eligible new images in this bounded search slice; saved cursor state and stopping."
-              break
+              consecutive_empty_batches=$((consecutive_empty_batches + 1))
+              echo "No eligible image in slice; saved search cursors. Consecutive empty slices: ${consecutive_empty_batches}/${max_consecutive_empty_batches}."
+              if [ "$consecutive_empty_batches" -ge "$max_consecutive_empty_batches" ]; then
+                echo "Three consecutive empty slices; stopping this run while preserving every saved cursor."
+                break
+              fi
+            else
+              consecutive_empty_batches=0
             fi
           done
       - name: Report final manifest count
