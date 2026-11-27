@@ -1,27 +1,27 @@
 {
   "schema": "org.fenrir.public-wallpapers.index.v1",
-  "updated_at": "2026-11-27T02:22:06.430881Z",
-  "count": 150,
+  "updated_at": "2026-11-27T02:24:31.655364Z",
+  "count": 157,
   "search_state": {
     "unsorted": {
-      "query_index": 11,
+      "query_index": 13,
       "offset": 0,
-      "last_query": "black minimal abstract background",
-      "last_run_images_added": 4,
+      "last_query": "dark futuristic architecture panorama",
+      "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "obsidian-minimalism-abstract-geometry": {
-      "query_index": 15,
-      "offset": 0,
-      "last_query": "brutalist concrete facade monochrome",
+      "query_index": 18,
+      "offset": 50,
+      "last_query": "geometric shadow architecture monochrome",
       "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "arctic-blue-violet": {
-      "query_index": 0,
-      "offset": 0,
-      "last_query": "frozen sea blue ice photography",
-      "last_run_images_added": 4,
+      "query_index": 1,
+      "offset": 100,
+      "last_query": "glacier ice field landscape",
+      "last_run_images_added": 7,
       "last_run_pages_scanned": 12
     },
     "nordic-mythology-fantasy": {
@@ -38,7 +38,7 @@
       "last_run_images_added": 3,
       "last_run_pages_scanned": 3
     },
-    "_category_start": 5
+    "_category_start": 6
   },
   "items": [
     {
@@ -69,6 +69,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/17cca48eb7311fd56776e1f3b77f0e571c2d771fe12c15032bfde6224b27eedf.jpg",
+      "sha256": "17cca48eb7311fd56776e1f3b77f0e571c2d771fe12c15032bfde6224b27eedf",
+      "file_size_bytes": 19519062,
+      "mime_type": "image/jpeg",
+      "width": 5756,
+      "height": 3837,
+      "dominant_colors": [
+        "#9faeb7",
+        "#4e535f",
+        "#9aa9b2",
+        "#4a515e",
+        "#4b5462"
+      ],
+      "title": "Jackson Glacier in 2021 zoomed in from Going-to-the-Sun Road (54793248987).jpg",
+      "description": "The Jackson Glacier Overlook, along the east side of Going-to-the-Sun Road is one of the easiest spots in the park to see a glacier. This picture of the front of the glacier was taken with a 600mm zoom lens.",
+      "creator": "GlacierNPS",
+      "credit": "Jackson Glacier in 2021 zoomed in from Going-to-the-Sun Road",
+      "attribution": "Jackson Glacier in 2021 zoomed in from Going-to-the-Sun Road. Jackson Glacier in 2021 zoomed in from Going-to-the-Sun Road (54793248987).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jackson_Glacier_in_2021_zoomed_in_from_Going-to-the-Sun_Road_(54793248987).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Jackson_Glacier_in_2021_zoomed_in_from_Going-to-the-Sun_Road_%2854793248987%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/arctic-blue-violet/1817685e98ed68c76adc2edfbf22b8acf9a82451d9d9af105c4aa447d33a2ca3.jpg",
       "sha256": "1817685e98ed68c76adc2edfbf22b8acf9a82451d9d9af105c4aa447d33a2ca3",
       "file_size_bytes": 8060839,
@@ -92,6 +119,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Antarctica%28js%29_32.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY-SA 3.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/1a40899bc22d99e86b03784d02e241c03f2207635b26b702faf39e5720ffdaf3.jpg",
+      "sha256": "1a40899bc22d99e86b03784d02e241c03f2207635b26b702faf39e5720ffdaf3",
+      "file_size_bytes": 889080,
+      "mime_type": "image/jpeg",
+      "width": 2908,
+      "height": 1641,
+      "dominant_colors": [
+        "#515f7d",
+        "#4b5d7c",
+        "#505f7d",
+        "#33537c",
+        "#3e6282"
+      ],
+      "title": "ISS006-E-41474 - View of Chile - Southern Patagonian Ice Field - Great South Glacier - Seno Ultima Esperanza (fjord) - Monte Balmaceda (cropped).jpg",
+      "description": "View of Chile taken during ISS Expedition 6.",
+      "creator": "Earth Science and Remote Sensing Unit , Lyndon B. Johnson Space Center",
+      "credit": "JSC Gateway to Astronaut Photography of Earth",
+      "attribution": "JSC Gateway to Astronaut Photography of Earth. ISS006-E-41474 - View of Chile - Southern Patagonian Ice Field - Great South Glacier - Seno Ultima Esperanza (fjord) - Monte Balmaceda (cropped).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:ISS006-E-41474_-_View_of_Chile_-_Southern_Patagonian_Ice_Field_-_Great_South_Glacier_-_Seno_Ultima_Esperanza_(fjord)_-_Monte_Balmaceda_(cropped).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/ISS006-E-41474_-_View_of_Chile_-_Southern_Patagonian_Ice_Field_-_Great_South_Glacier_-_Seno_Ultima_Esperanza_%28fjord%29_-_Monte_Balmaceda_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
@@ -171,6 +225,33 @@
       "source": "Wikimedia Commons",
       "source_page": "https://commons.wikimedia.org/wiki/File:Peder_Balke_-_Northern_Lights_over_Coastal_Landscape_-_Google_Art_Project.jpg",
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Peder_Balke_-_Northern_Lights_over_Coastal_Landscape_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/24fa131dfbde5998415376ae45b0aca2fa4e43f7c330bb84d6972b04915d1087.jpg",
+      "sha256": "24fa131dfbde5998415376ae45b0aca2fa4e43f7c330bb84d6972b04915d1087",
+      "file_size_bytes": 3960807,
+      "mime_type": "image/jpeg",
+      "width": 5346,
+      "height": 3584,
+      "dominant_colors": [
+        "#dbc8b7",
+        "#69695d",
+        "#dcc9b8",
+        "#dac7b6",
+        "#536677"
+      ],
+      "title": "ISS063-E-82055 - View of Chile - Northern Patagonian Ice Field - Glaciar Colonia - Lago Cachet Dos - Cerro Nora - Lago Cachet Uno - Cerro Cachet - Glaciar Cachet I - IV - Glaciar Nef - Nef glacial laguna landscape (cropped).jpg",
+      "description": "View of Chile taken during ISS Expedition 63. Northern Patagonian Ice Field , Colonia Glacier - Glaciar Colonia, (empty) Lago Cachet Dos valley, mountain Cerro Nora rock peaks, lake Lago Cachet Uno, Cerro Cachet glaciers Glaciar Cachet I - IV, Nef Glacier - Glaciar Nef, Nef glacial laguna lakes landscape",
+      "creator": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
+      "credit": "JSC Gateway to Astronaut Photography of Earth",
+      "attribution": "JSC Gateway to Astronaut Photography of Earth. ISS063-E-82055 - View of Chile - Northern Patagonian Ice Field - Glaciar Colonia - Lago Cachet Dos - Cerro Nora - Lago Cachet Uno - Cerro Cachet - Glaciar Cachet I - IV - Glaciar Nef - Nef glacial laguna landscape (cropped).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:ISS063-E-82055_-_View_of_Chile_-_Northern_Patagonian_Ice_Field_-_Glaciar_Colonia_-_Lago_Cachet_Dos_-_Cerro_Nora_-_Lago_Cachet_Uno_-_Cerro_Cachet_-_Glaciar_Cachet_I_-_IV_-_Glaciar_Nef_-_Nef_glacial_laguna_landscape_(cropped).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/ISS063-E-82055_-_View_of_Chile_-_Northern_Patagonian_Ice_Field_-_Glaciar_Colonia_-_Lago_Cachet_Dos_-_Cerro_Nora_-_Lago_Cachet_Uno_-_Cerro_Cachet_-_Glaciar_Cachet_I_-_IV_-_Glaciar_Nef_-_Nef_glacial_laguna_landscape_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "Public domain",
       "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
       "license_review": "automated metadata gate; verify file page for corrections",
@@ -281,6 +362,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Virmalised_18.03.15_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/333eb7442e38439c563e408d428c69dacd1d7e1ef3b4aefe1e85bbe152b6d553.jpg",
+      "sha256": "333eb7442e38439c563e408d428c69dacd1d7e1ef3b4aefe1e85bbe152b6d553",
+      "file_size_bytes": 9038834,
+      "mime_type": "image/jpeg",
+      "width": 5427,
+      "height": 3392,
+      "dominant_colors": [
+        "#a6c5e4",
+        "#071727",
+        "#071626",
+        "#a7c6e4",
+        "#071525"
+      ],
+      "title": "Jackson Glacier Distant in 2025 (54748630053).jpg",
+      "description": "A landscape image of Jackson Glacier from Going-to-the-Sun Road on August 25, 2025 with a spruce tree drooping with cones in the left foreground.",
+      "creator": "GlacierNPS",
+      "credit": "Jackson Glacier Distant in 2025",
+      "attribution": "Jackson Glacier Distant in 2025. Jackson Glacier Distant in 2025 (54748630053).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jackson_Glacier_Distant_in_2025_(54748630053).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Jackson_Glacier_Distant_in_2025_%2854748630053%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
@@ -1230,6 +1338,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/bc000a3117ac93257700e1c286d3411586edfb630175d0c257c4172055e30253.jpg",
+      "sha256": "bc000a3117ac93257700e1c286d3411586edfb630175d0c257c4172055e30253",
+      "file_size_bytes": 21908275,
+      "mime_type": "image/jpeg",
+      "width": 6720,
+      "height": 4480,
+      "dominant_colors": [
+        "#111415",
+        "#101314",
+        "#121617",
+        "#121516",
+        "#16191a"
+      ],
+      "title": "Winter Ice on Lake McDonald (48490408802).jpg",
+      "description": "Winter Ice on Lake McDonald",
+      "creator": "GlacierNPS",
+      "credit": "Winter Ice on Lake McDonald",
+      "attribution": "Winter Ice on Lake McDonald. Winter Ice on Lake McDonald (48490408802).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Winter_Ice_on_Lake_McDonald_(48490408802).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Winter_Ice_on_Lake_McDonald_%2848490408802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/arctic-blue-violet/c0a052923a1d2505dc474f9b7d57c7384076c3e1bd9c085db67260f1d591d4e3.jpg",
       "sha256": "c0a052923a1d2505dc474f9b7d57c7384076c3e1bd9c085db67260f1d591d4e3",
       "file_size_bytes": 1926144,
@@ -1311,6 +1446,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/cc3dac3d4119a910ea854ad71a8a703931a0868e87d658d180a2fb64b9a0ac0e.jpg",
+      "sha256": "cc3dac3d4119a910ea854ad71a8a703931a0868e87d658d180a2fb64b9a0ac0e",
+      "file_size_bytes": 3070269,
+      "mime_type": "image/jpeg",
+      "width": 4961,
+      "height": 3508,
+      "dominant_colors": [
+        "#164387",
+        "#ffffff",
+        "#9d6d60",
+        "#c3a198",
+        "#c5a79f"
+      ],
+      "title": "Cerros de la Plaza glacier disappears in northern Colombia (P-070208-00-14).jpg",
+      "description": "The Cerros de la Plaza glacier, part of the El Cocuy National Natural Park in northern Colombia, once formed an important high-altitude tropical ice mass within a protected ecosystem. This remote Andean landscape hosts páramo vegetation (high-altitude tropical grassland), glacial lakes, and unique biodiversity. The area plays a crucial role in regional water and climate regulation. In March 2026, the Institute of Hydrology, Meteorology and Environmental Studies (IDEAM) announced the disappearance of the glacier. The disappearance of the glacier is visible in this series of Copernicus Sentinel-2 images acquired between 27 March 2016 and 28 February 2026. In 2016, the ice appears as a bright cyan-white patch against reddish-brown terrain. In 2018 and 2020, the glacier is visibly smaller, with further fragmentation evident in 2022 and 2024. By early 2025, only small remnants remain before disappearing entirely in 2026. Copernicus satellite data support consistent monitoring of glacier extent, informing long-term climate assessments, water resource management, and environmental policy development in high-mountain regions.",
+      "creator": "Copernicus Sentinel-2 imagery, EK - GD DEFIS, EC - DG DEFIS, SPACETEC PARTNERS, CE - DG DEFIS",
+      "credit": "Image of the Day - April 2026",
+      "attribution": "Image of the Day - April 2026. Cerros de la Plaza glacier disappears in northern Colombia (P-070208-00-14).jpg via Wikimedia Commons. License: CC BY 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cerros_de_la_Plaza_glacier_disappears_in_northern_Colombia_(P-070208-00-14).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Cerros_de_la_Plaza_glacier_disappears_in_northern_Colombia_%28P-070208-00-14%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/arctic-blue-violet/cd0d42706098a6125bee11a05421dceddf08ace9e802592f6e1551b81205a774.jpg",
       "sha256": "cd0d42706098a6125bee11a05421dceddf08ace9e802592f6e1551b81205a774",
       "file_size_bytes": 6193693,
@@ -1388,6 +1550,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/2024-05-10%2C_22-49_Aurora%2C_Parey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/df4b03a51d67338111e6c98d465eb99d65659aeafec49333664469a305d0cdd2.jpg",
+      "sha256": "df4b03a51d67338111e6c98d465eb99d65659aeafec49333664469a305d0cdd2",
+      "file_size_bytes": 1590038,
+      "mime_type": "image/jpeg",
+      "width": 2737,
+      "height": 2437,
+      "dominant_colors": [
+        "#eeebe6",
+        "#f5f2eb",
+        "#efece7",
+        "#f1eee9",
+        "#f0ede8"
+      ],
+      "title": "ISS022-E-77162 - View of Chile - Northern Patagonian Ice Field - Cerro Cachet - Glaciar Cachet I - Lago Cachet Uno - Glaciar Cachet Norte - Glaciar Cachet IV - Glaciar Nef - Nef glacial laguna landscape - Cerro Gargantua (cropped).jpg",
+      "description": "View of Chile taken during ISS Expedition 22.",
+      "creator": "Earth Science and Remote Sensing Unit , Lyndon B. Johnson Space Center",
+      "credit": "JSC Gateway to Astronaut Photography of Earth",
+      "attribution": "JSC Gateway to Astronaut Photography of Earth. ISS022-E-77162 - View of Chile - Northern Patagonian Ice Field - Cerro Cachet - Glaciar Cachet I - Lago Cachet Uno - Glaciar Cachet Norte - Glaciar Cachet IV - Glaciar Nef - Nef glacial laguna landscape - Cerro Gargantua (cropped).jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:ISS022-E-77162_-_View_of_Chile_-_Northern_Patagonian_Ice_Field_-_Cerro_Cachet_-_Glaciar_Cachet_I_-_Lago_Cachet_Uno_-_Glaciar_Cachet_Norte_-_Glaciar_Cachet_IV_-_Glaciar_Nef_-_Nef_glacial_laguna_landscape_-_Cerro_Gargantua_(cropped).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/ISS022-E-77162_-_View_of_Chile_-_Northern_Patagonian_Ice_Field_-_Cerro_Cachet_-_Glaciar_Cachet_I_-_Lago_Cachet_Uno_-_Glaciar_Cachet_Norte_-_Glaciar_Cachet_IV_-_Glaciar_Nef_-_Nef_glacial_laguna_landscape_-_Cerro_Gargantua_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
