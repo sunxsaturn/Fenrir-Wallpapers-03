@@ -537,9 +537,12 @@ def main() -> int:
         ):
             break
         queries = CATEGORIES[category]
-        # Image counts determine priority only; byte budgets determine when
-        # a category is full. Continue filling until that hard limit is reached.
-        category_add_limit = PER_CATEGORY_LIMIT
+        current_category_count = global_category_counts.get(category, 0)
+        category_remaining = max(0, starting_global_max_count - current_category_count)
+        if category_remaining == 0:
+            reject("global_category_target_reached")
+            continue
+        category_add_limit = min(PER_CATEGORY_LIMIT, category_remaining)
         if folder_usage[category] >= category_budgets[category]:
             reject("category_budget_reached")
             continue
@@ -763,8 +766,7 @@ def main() -> int:
         "repository_budget_bytes": MAX_REPOSITORY_BYTES,
         "category_budgets_bytes": category_budgets,
         "category_usage_bytes": folder_usage,
-        "starting_global_max_category_count": starting_global_max_count,
-        "balancing_mode": "fill_each_category_until_folder_or_repository_budget",
+        "global_target_category_count": starting_global_max_count,
         "global_category_counts_after": global_category_counts,
         "download_attempts": download_attempts,
         "search_pages": search_pages,
