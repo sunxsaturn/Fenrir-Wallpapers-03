@@ -1,35 +1,35 @@
 {
   "schema": "org.fenrir.public-wallpapers.index.v1",
-  "updated_at": "2026-11-27T02:16:07.523900Z",
-  "count": 131,
+  "updated_at": "2026-11-27T02:18:37.735410Z",
+  "count": 142,
   "search_state": {
     "unsorted": {
-      "query_index": 4,
-      "offset": 350,
-      "last_query": "dark blue abstract landscape",
+      "query_index": 7,
+      "offset": 50,
+      "last_query": "blue violet abstract background photography",
       "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "obsidian-minimalism-abstract-geometry": {
-      "query_index": 4,
-      "offset": 350,
-      "last_query": "dark geometric sculpture",
-      "last_run_images_added": 12,
+      "query_index": 7,
+      "offset": 0,
+      "last_query": "monolithic black architecture",
+      "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "arctic-blue-violet": {
-      "query_index": 2,
-      "offset": 50,
-      "last_query": "iceberg Antarctica landscape",
-      "last_run_images_added": 16,
-      "last_run_pages_scanned": 10
+      "query_index": 4,
+      "offset": 250,
+      "last_query": "polar blue ice landscape",
+      "last_run_images_added": 2,
+      "last_run_pages_scanned": 12
     },
     "nordic-mythology-fantasy": {
       "query_index": 2,
-      "offset": 200,
+      "offset": 250,
       "last_query": "Viking age archaeology",
-      "last_run_images_added": 14,
-      "last_run_pages_scanned": 12
+      "last_run_images_added": 9,
+      "last_run_pages_scanned": 1
     },
     "monochrome-futuristic-architecture": {
       "query_index": 0,
@@ -38,7 +38,7 @@
       "last_run_images_added": 3,
       "last_run_pages_scanned": 3
     },
-    "_category_start": 2
+    "_category_start": 3
   },
   "items": [
     {
@@ -366,6 +366,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/44340df83c8a1ae03c8afa74e2c74dc903013a2c2aa43dc75712ac65bc5b1d73.jpg",
+      "sha256": "44340df83c8a1ae03c8afa74e2c74dc903013a2c2aa43dc75712ac65bc5b1d73",
+      "file_size_bytes": 9286630,
+      "mime_type": "image/jpeg",
+      "width": 4896,
+      "height": 3264,
+      "dominant_colors": [
+        "#808d9d",
+        "#8a9095",
+        "#5185b4",
+        "#798797",
+        "#848d97"
+      ],
+      "title": "View of Fuglvatnet and Ballvatnet lakes at Junkerdal nasjonal park.jpg",
+      "description": "Junkerdal nasjonal park (Juŋŋkaravuome nasjonalpárkka) is located between Sulitjelma in the north and Junkerdal in the south. The whole area is characterized by a very varied landscape that was formed during the ice age 10,000 years ago. The climate and favorable bedrock have provided a basis for life for many plant species. Many rare and endangered birds nest within the national park, including hunting falcon, king eagle and havelle. Junkerdal National Park has a relatively hot and dry summer climate. The climate and favorable bedrock have provided a basis for life for many plant species. The plant life in the eastern parts was conserved already in 1928 and the conservation was extended in 1935. In the national park there are a number of plantations with great botanical wealth. Several of the vegetation types are generally rare. Many of the plants in the national park can be found only further north or on other continents. The wildlife is diverse because of the rich vegetation. The wolverine and the lynx are firm here and the bear roam regularly through the area. The National Park also has deposits of rare dawns, such as polar blue wing and hedgehog wing. Junkerdal National Park is primarily the Sami area. Reindeer farms have been in the area from the 1500th to 1600s, but hunting and catching have been taking place in immemorial times. Lake Fuglvatnet and Ballvatnet are not part of the national park, but all areas around are included. Source: Norwegian Environment Agency. www.naturbase.no",
+      "creator": "Frankemann",
+      "credit": "Own work",
+      "attribution": "Own work. View of Fuglvatnet and Ballvatnet lakes at Junkerdal nasjonal park.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:View_of_Fuglvatnet_and_Ballvatnet_lakes_at_Junkerdal_nasjonal_park.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/View_of_Fuglvatnet_and_Ballvatnet_lakes_at_Junkerdal_nasjonal_park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/arctic-blue-violet/47b79cc9477e63a18446ee60e8fae3640b2b875ad7ead2f6944fadbfaff16be5.jpg",
       "sha256": "47b79cc9477e63a18446ee60e8fae3640b2b875ad7ead2f6944fadbfaff16be5",
       "file_size_bytes": 1373157,
@@ -497,6 +524,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Antarctica%28js%29_37.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY-SA 3.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/arctic-blue-violet/5b267e51de797e231ec92570079eae222974e97e435c384d405ebb06c7075886.jpg",
+      "sha256": "5b267e51de797e231ec92570079eae222974e97e435c384d405ebb06c7075886",
+      "file_size_bytes": 7744863,
+      "mime_type": "image/jpeg",
+      "width": 6000,
+      "height": 4000,
+      "dominant_colors": [
+        "#e2e3ec",
+        "#68819d",
+        "#4885b9",
+        "#6883a2",
+        "#8f98b6"
+      ],
+      "title": "Transantarctic pho 2017334 lrg.jpg",
+      "description": "NASA’s Operation IceBridge—an airborne mission to map polar ice—recently made some flights out of the McMurdo and Amundsen-Scott South Pole stations, giving researchers greater access to the interior of the icy continent. The flights over Antarctica (the ninth year in a row) have turned up ample science data, as well as some spectacular images. The top photograph was acquired during a flight from McMurdo Station aboard a Basler aircraft on November 30, 2017. It shows ice flowing from the Transantarctic Mountains, a range that runs the length of the continent and separates West Antarctica and East Antarctica. The dark blue areas are where melt water—spurred by days of abundant sunshine and light winds—has flowed down into lower spots and then refroze. Refrozen melt ponds fill almost every ripple in the top-middle of the image, and along the direction of flow of the glacier visible in the foreground. Paler blue areas indicate places where uncompressed snow has blown away to reveal blue ice. Ice is generally blue for the same reason that water is blue. Namely, the bond between oxygen and hydrogen atoms in the water molecule, frozen or liquid, absorbs longer wavelengths of visible light and leaves behind the shorter (blue) wavelengths. Dense glacial ice that has been compressed and the air bubbles are squeezed out will appear even bluer.",
+      "creator": "Chris Larsen, NASA's Operation IceBridge mission",
+      "credit": "IceBridge Blues - Earth Observatory https://earthobservatory.nasa.gov/images/91396/icebridge-blues",
+      "attribution": "IceBridge Blues - Earth Observatory https://earthobservatory.nasa.gov/images/91396/icebridge-blues. Transantarctic pho 2017334 lrg.jpg via Wikimedia Commons. License: Public domain.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Transantarctic_pho_2017334_lrg.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Transantarctic_pho_2017334_lrg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
@@ -2418,6 +2472,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/110215190f820eca48e58c1d0eb2e4cf46d1d4892dcff6d6c4ea74c52f1a7207.jpg",
+      "sha256": "110215190f820eca48e58c1d0eb2e4cf46d1d4892dcff6d6c4ea74c52f1a7207",
+      "file_size_bytes": 3446821,
+      "mime_type": "image/jpeg",
+      "width": 4288,
+      "height": 2848,
+      "dominant_colors": [
+        "#ece8e0",
+        "#ecece4",
+        "#ede9e1",
+        "#edede5",
+        "#eeede5"
+      ],
+      "title": "Penannular brooch (6851602133).jpg",
+      "description": "Penannular brooch. Gilded bronze. The brooch is made in Borre-style, with its distinctive ring braid and animal ornamentation. Grave find, Björkö, Adelsö, Uppland, Sweden. SHM 34000:Bj 581 See also <a href=\" http://kulturarvsdata.se/shm/object/html/444244 \" rel=\"nofollow\">kulturarvsdata.se/shm/object/html/444244</a>",
+      "creator": "The Swedish History Museum, Stockholm from Sweden",
+      "credit": "Penannular brooch",
+      "attribution": "Penannular brooch. Penannular brooch (6851602133).jpg via Wikimedia Commons. License: CC BY 2.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Penannular_brooch_(6851602133).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Penannular_brooch_%286851602133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/nordic-mythology-fantasy/2736a762d705bddad4a055c9fd797cf7a1e63ae842fc60293149ea59637a184b.jpg",
       "sha256": "2736a762d705bddad4a055c9fd797cf7a1e63ae842fc60293149ea59637a184b",
       "file_size_bytes": 2610654,
@@ -2445,6 +2526,87 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/34de70f214b35f85831184d1bb17846936da82a1eb08849a1515136bec8bd51a.jpg",
+      "sha256": "34de70f214b35f85831184d1bb17846936da82a1eb08849a1515136bec8bd51a",
+      "file_size_bytes": 30405907,
+      "mime_type": "image/jpeg",
+      "width": 16382,
+      "height": 3852,
+      "dominant_colors": [
+        "#ced8e4",
+        "#ffffff",
+        "#cfdff8",
+        "#a7b2c4",
+        "#af9f9a"
+      ],
+      "title": "Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Distorted.jpg",
+      "description": "Distorted panorama photo of a \"Viking camp/village\" and Gildehallen , a reconstruction of a large Viking Age feast/banquet/party hall inspired by medieval Scandinavian architecture , archaeological finds, crafts and design from the time period. The Viking hall was built in 2013 as part of the Midgard Vikingsenter , a Viking Age visitor and educational centre near the Borre burial mounds by the Oslo Fjord in Horten, Norway . Photo showing the hall building with wood carvings and wood shingle (roof tiles), palisade and other fences, outdoor benches, etc., all made of wood.",
+      "creator": "Wolfmann",
+      "credit": "Own work",
+      "attribution": "Own work. Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Distorted.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Distorted.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Distorted.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/3c58cabe56cc23a3507706a888c1023ed923c243fab2c101a471e231fb45b0c2.jpg",
+      "sha256": "3c58cabe56cc23a3507706a888c1023ed923c243fab2c101a471e231fb45b0c2",
+      "file_size_bytes": 2343458,
+      "mime_type": "image/jpeg",
+      "width": 4288,
+      "height": 2848,
+      "dominant_colors": [
+        "#dcd8cf",
+        "#dbd7ce",
+        "#d9d5cc",
+        "#d8d4cb",
+        "#d6d2c9"
+      ],
+      "title": "Funnel-shaped beaker, copy (6875771243).jpg",
+      "description": "Funnel-shaped beaker, copy. Glass. The original is of Frankish provenance. Grave find, Björkö, Adelsö, Uppland, Sweden. SHM 29750:26 See also: <a href=\" http://kulturarvsdata.se/shm/object/html/106822 \" rel=\"nofollow\">kulturarvsdata.se/shm/object/html/106822</a>",
+      "creator": "The Swedish History Museum, Stockholm from Sweden",
+      "credit": "Funnel-shaped beaker, copy",
+      "attribution": "Funnel-shaped beaker, copy. Funnel-shaped beaker, copy (6875771243).jpg via Wikimedia Commons. License: CC BY 2.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Funnel-shaped_beaker%2C_copy_(6875771243).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Funnel-shaped_beaker%2C_copy_%286875771243%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/4907e306938bb81ad47ad513e65c17b2f3cbe78890b90804391457254c7204e2.jpg",
+      "sha256": "4907e306938bb81ad47ad513e65c17b2f3cbe78890b90804391457254c7204e2",
+      "file_size_bytes": 21597271,
+      "mime_type": "image/jpeg",
+      "width": 14060,
+      "height": 3855,
+      "dominant_colors": [
+        "#cad9f6",
+        "#ccdbf8",
+        "#cdddf7",
+        "#d3e3fc",
+        "#cfdff9"
+      ],
+      "title": "Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09 Panorama.jpg",
+      "description": "Distorted panorama photo of a \"Viking camp/village\" and Gildehallen , a reconstruction of a large Viking Age feast/banquet/party hall inspired by medieval Scandinavian architecture , archaeological finds, crafts and design from the time period. The Viking hall was built in 2013 as part of the Midgard Vikingsenter , a Viking Age visitor and educational centre near the Borre burial mounds by the Oslo Fjord in Horten, Norway . Photo showing the hall building with wood carvings and wood shingle (roof tiles), a few smaller service buildings and sheds, a gate tower, a palisade and other fences, a boardwalk, outdoor benches and tables, etc., all made of wood.",
+      "creator": "Wolfmann",
+      "credit": "Own work",
+      "attribution": "Own work. Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09 Panorama.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09_Panorama.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/nordic-mythology-fantasy/49f0e6f18fd601e267d1917a8efef9fe4416220461694267c58e69cca9f9a4dc.png",
       "sha256": "49f0e6f18fd601e267d1917a8efef9fe4416220461694267c58e69cca9f9a4dc",
       "file_size_bytes": 1719027,
@@ -2468,6 +2630,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Karte_Danewerk_ja.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY 3.0",
       "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/4b587889c456f794942245eaaca7f5d95534838eee6d7530cf895ca76f82eb0b.jpg",
+      "sha256": "4b587889c456f794942245eaaca7f5d95534838eee6d7530cf895ca76f82eb0b",
+      "file_size_bytes": 23135815,
+      "mime_type": "image/jpeg",
+      "width": 16382,
+      "height": 3876,
+      "dominant_colors": [
+        "#a5b8d8",
+        "#a2b7d8",
+        "#a5b9da",
+        "#c6d0da",
+        "#494643"
+      ],
+      "title": "Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Pano.jpg",
+      "description": "Distorted panorama photo of a \"Viking camp/village\" and Gildehallen , a reconstruction of a large Viking Age feast/banquet/party hall inspired by medieval Scandinavian architecture , archaeological finds, crafts and design from the time period. The Viking hall was built in 2013 as part of the Midgard Vikingsenter , a Viking Age visitor and educational centre near the Borre burial mounds by the Oslo Fjord in Horten, Norway . Photo showing the hall building with wood carvings and wood shingle (roof tiles), a few smaller service buildings and sheds, a palisade and other fences, etc., all made of wood.",
+      "creator": "Wolfmann",
+      "credit": "Own work",
+      "attribution": "Own work. Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Pano.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Pano.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Pano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
@@ -2580,6 +2769,33 @@
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
     {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/7fbfaa9fa6a26590e67b80a7108ec9103513a47abd000963bdc2e26ee8f38f50.jpg",
+      "sha256": "7fbfaa9fa6a26590e67b80a7108ec9103513a47abd000963bdc2e26ee8f38f50",
+      "file_size_bytes": 1563213,
+      "mime_type": "image/jpeg",
+      "width": 2954,
+      "height": 1576,
+      "dominant_colors": [
+        "#ffffff",
+        "#010101",
+        "#020202",
+        "#050803",
+        "#020302"
+      ],
+      "title": "Arnäsbacken, Örnsköldsvik. Sveriges nordligaste järnåldersgård och gravhögfält.jpg",
+      "description": "Arnäsbacken (RAÄ Arnäs 1:1), Örnsköldsvik, Sweden. Sweden's northernmost Iron Age and Viking Age village and burial mound field.",
+      "creator": "Ångermanlands fornminnesförening Photo: Sven Käll.",
+      "credit": "Own work",
+      "attribution": "Own work. Arnäsbacken, Örnsköldsvik. Sveriges nordligaste järnåldersgård och gravhögfält.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Arn%C3%A4sbacken%2C_%C3%96rnsk%C3%B6ldsvik._Sveriges_nordligaste_j%C3%A4rn%C3%A5ldersg%C3%A5rd_och_gravh%C3%B6gf%C3%A4lt.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Arn%C3%A4sbacken%2C_%C3%96rnsk%C3%B6ldsvik._Sveriges_nordligaste_j%C3%A4rn%C3%A5ldersg%C3%A5rd_och_gravh%C3%B6gf%C3%A4lt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
       "path": "Fenrir Wallpapers/nordic-mythology-fantasy/866dbd7a6e5334bd45d8a5187eb38ec9cd65d7075b925bb44ed59953bd075d4e.jpg",
       "sha256": "866dbd7a6e5334bd45d8a5187eb38ec9cd65d7075b925bb44ed59953bd075d4e",
       "file_size_bytes": 2604771,
@@ -2603,6 +2819,33 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Axe_%286908981377%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY 2.0",
       "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/9de4c2dab58b02cd3bd6d973889932e4414ad5d40a28d31bc76fbe1a4097b363.jpg",
+      "sha256": "9de4c2dab58b02cd3bd6d973889932e4414ad5d40a28d31bc76fbe1a4097b363",
+      "file_size_bytes": 18350141,
+      "mime_type": "image/jpeg",
+      "width": 11476,
+      "height": 3834,
+      "dominant_colors": [
+        "#cbd9f3",
+        "#c7d7f1",
+        "#ccdaf4",
+        "#cddbf5",
+        "#c6d6f0"
+      ],
+      "title": "Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Panorama.jpg",
+      "description": "Distorted panorama photo of a \"Viking camp/village\" and Gildehallen , a reconstruction of a large Viking Age feast/banquet/party hall inspired by medieval Scandinavian architecture , archaeological finds, crafts and design from the time period. The Viking hall was built in 2013 as part of the Midgard Vikingsenter , a Viking Age visitor and educational centre near the Borre burial mounds by the Oslo Fjord in Horten, Norway . Photo showing the hall building with wood carvings and wood shingle (roof tiles), a few smaller service buildings and sheds, a gate tower, a palisade and other fences, a boardwalk, outdoor benches and tables, etc., all made of wood.",
+      "creator": "Wolfmann",
+      "credit": "Own work",
+      "attribution": "Own work. Midgard vikingsenter Borre Horten Norway GILDEHALLEN Rekonstruert festhall 2013 Leir plass trehus porttårn gjerde gangvei Viking Age inspired party hall Village camp area Wooden palisade fence gate tower etc 2021-09-03 Panorama.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Panorama.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Midgard_vikingsenter_Borre_Horten_Norway_GILDEHALLEN_Rekonstruert_festhall_2013_Leir_plass_trehus_portt%C3%A5rn_gjerde_gangvei_Viking_Age_inspired_party_hall_Village_camp_area_Wooden_palisade_fence_gate_tower_etc_2021-09-03_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "license_review": "automated metadata gate; verify file page for corrections",
       "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
     },
@@ -2763,6 +3006,60 @@
       "source": "Wikimedia Commons",
       "source_page": "https://commons.wikimedia.org/wiki/File:LSR_Wikinger_-_Kamm_Geweih.jpg",
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/LSR_Wikinger_-_Kamm_Geweih.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/e4f03662384884f4c72554de8b4e619945f6b0da44732e7de71e698663cf7fa7.jpg",
+      "sha256": "e4f03662384884f4c72554de8b4e619945f6b0da44732e7de71e698663cf7fa7",
+      "file_size_bytes": 2753233,
+      "mime_type": "image/jpeg",
+      "width": 4288,
+      "height": 2848,
+      "dominant_colors": [
+        "#c4c4bc",
+        "#c5c5bd",
+        "#c7c7bf",
+        "#c2c2ba",
+        "#c3c3bb"
+      ],
+      "title": "Antlers (6909349205).jpg",
+      "description": "Antlers. Raw materials for comb-making. Björkö, Adelsö, Uppland, Sweden. SHM 5208:1678 See also <a href=\" http://kulturarvsdata.se/shm/object/html/269932 \" rel=\"nofollow\">kulturarvsdata.se/shm/object/html/269932</a>",
+      "creator": "The Swedish History Museum, Stockholm from Sweden",
+      "credit": "Antlers",
+      "attribution": "Antlers. Antlers (6909349205).jpg via Wikimedia Commons. License: CC BY 2.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Antlers_(6909349205).jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Antlers_%286909349205%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_identifier": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_review": "automated metadata gate; verify file page for corrections",
+      "publication_policy": "CC0/Public Domain/CC BY/CC BY-SA; NC and ND excluded"
+    },
+    {
+      "path": "Fenrir Wallpapers/nordic-mythology-fantasy/f3c61fd83a28ea55eef264866e8297aea8303e22a87e800605d305bf46eaecad.jpg",
+      "sha256": "f3c61fd83a28ea55eef264866e8297aea8303e22a87e800605d305bf46eaecad",
+      "file_size_bytes": 2946836,
+      "mime_type": "image/jpeg",
+      "width": 3855,
+      "height": 2891,
+      "dominant_colors": [
+        "#d9cdbc",
+        "#dacdbc",
+        "#d6cab8",
+        "#d9ccbb",
+        "#dacebd"
+      ],
+      "title": "Hopeaketju.jpg",
+      "description": "Kaksi Kainuun Museossa esillä olevaa hopeaketjua.",
+      "creator": "JarkkoTK",
+      "credit": "Own work",
+      "attribution": "Own work. Hopeaketju.jpg via Wikimedia Commons. License: CC BY-SA 4.0.",
+      "source": "Wikimedia Commons",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hopeaketju.jpg",
+      "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Hopeaketju.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "license_identifier": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
       "license_review": "automated metadata gate; verify file page for corrections",
