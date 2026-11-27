@@ -1,5 +1,7 @@
 # Fenrir Wallpapers — Volume 03
 
+**Library navigation:** [Hub and live volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/README.md) · [Volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json) · [Fenrir project map](https://github.com/sunxsaturn/Fenrir-Arch/blob/main/docs/PROJECT-MAP.md) · [Desktop multi-volume sync guide](https://github.com/sunxsaturn/Fenrir-Dots/blob/main/docs/WALLPAPER-LIBRARY.md)
+
 A public overflow image-storage volume in the combined Fenrir wallpaper library, designed to bring every category up to the largest category's global committed image count.
 
 **Current collection:** the live wallpaper count is recorded in [manifest/index.json](./manifest/index.json). The authoritative list of volumes is [the hub registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json).
