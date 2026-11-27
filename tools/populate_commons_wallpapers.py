@@ -467,9 +467,9 @@ def main() -> int:
     existing_shas, existing_titles, global_category_counts = gather_library_deduplication(index)
     target_category_count = max(global_category_counts.values(), default=0)
     search_state = index.setdefault("search_state", {})
-    # Volume 03 is overflow capacity for globally underrepresented categories.
-    # 880 MiB × 9 categories = 7.734 GiB, leaving 272 MiB under the 8 GiB
-    # repository guard for manifests, scripts and Git object overhead.
+    # Volume 03 provides extra capacity for categories below the current
+    # largest global image count. These folder budgets total about 6.98 GiB,
+    # leaving roughly 1 GiB under the 8 GiB repository guard for Git overhead.
     category_budgets = {
         "nordic-mythology-fantasy": 450 * 1024 * 1024,
         "cinematic-nature": 450 * 1024 * 1024,
