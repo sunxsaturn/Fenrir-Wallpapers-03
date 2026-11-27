@@ -4,23 +4,23 @@
   "count": 167,
   "search_state": {
     "unsorted": {
-      "query_index": 6,
+      "query_index": 9,
       "offset": 200,
-      "last_query": "dark abstract architecture photography",
+      "last_query": "purple night landscape panorama",
       "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "obsidian-minimalism-abstract-geometry": {
-      "query_index": 6,
-      "offset": 100,
-      "last_query": "monolithic black architecture",
+      "query_index": 10,
+      "offset": 50,
+      "last_query": "black geometric installation art",
       "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
     "arctic-blue-violet": {
-      "query_index": 6,
-      "offset": 400,
-      "last_query": "arctic night blue landscape",
+      "query_index": 0,
+      "offset": 150,
+      "last_query": "aurora borealis landscape",
       "last_run_images_added": 0,
       "last_run_pages_scanned": 12
     },
@@ -38,7 +38,7 @@
       "last_run_images_added": 3,
       "last_run_pages_scanned": 3
     },
-    "_category_start": 0
+    "_category_start": 1
   },
   "items": [
     {
