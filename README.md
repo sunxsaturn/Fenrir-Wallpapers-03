@@ -1,39 +1,59 @@
 # Fenrir Wallpapers — Volume 03
 
-**Library navigation:** [Hub and live volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/README.md) · [Volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json) · [Fenrir project map](https://github.com/sunxsaturn/Fenrir-Arch/blob/main/docs/PROJECT-MAP.md) · [Desktop multi-volume sync guide](https://github.com/sunxsaturn/Fenrir-Dots/blob/main/docs/WALLPAPER-LIBRARY.md)
+**Library navigation:** [Hub documentation](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/README.md) · [Live volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json) · [Fenrir project map](https://github.com/sunxsaturn/Fenrir-Arch/blob/main/docs/PROJECT-MAP.md) · [Desktop multi-volume sync](https://github.com/sunxsaturn/Fenrir-Dots/blob/main/docs/WALLPAPER-LIBRARY.md)
 
-A public overflow image-storage volume in the combined Fenrir wallpaper library, designed to bring every category up to the largest category's global committed image count.
+A public overflow image-storage volume in the combined Fenrir wallpaper library. Its current role is **balanced population**: add unique images to the categories that are most underrepresented across all active volume manifests.
 
-**Current collection:** the live wallpaper count is recorded in [manifest/index.json](./manifest/index.json). The authoritative list of volumes is [the hub registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json).
+## Current role and balancing
 
-## Storage and acquisition
+The hub registry currently marks Volume 03 as active and acquisition-enabled for balanced population.
 
-- Target Git object store: **8 GiB**.
-- Individual image limit: **45 MiB**.
-- Acquisition batch: up to **80 images / 700 MiB per sequential batch**.
-- The count target is the current largest category across all active volumes (currently **185 committed images**, Cinematic Nature). Each category receives only enough new, unique images to reach that count. No existing image is deleted.
-- Folder storage ceilings are sized for the remaining count gap: Arctic **1,200 MiB**, Obsidian **1,050 MiB**, Unsorted **2,200 MiB**, and the other six categories **450 MiB each** (about **6.98 GiB** planned folder capacity). The repository-wide 8 GiB Git-object limit remains the hard stop.
-- Each batch targets the globally largest current category count, prioritizes the most underfilled categories, respects folder/repository storage ceilings, and stops adding to any category once it reaches the target.
-- Scheduled sequential Wikimedia Commons acquisition, coordinated as the library's only scheduled downloader.
-- Cross-volume SHA-256 and source-title de-duplication against every active Fenrir volume.
-- Image minimum: 2560×1440 landscape; JPEG, PNG or WebP.
-- Only Public Domain, CC0, CC BY and CC BY-SA metadata pass the automated license gate. NC and ND terms are excluded.
-- Creator, attribution, source page, license, dimensions and SHA-256 are retained for every published image.
+The target is dynamic, not a fixed historical image count:
 
-The importer respects source rate limits, backs off on HTTP 429, validates decoded image bytes and stops before exceeding storage budgets. Automated metadata screening is not a legal warranty. All images are stored under [Fenrir Wallpapers/](./Fenrir%20Wallpapers/).
+1. Read committed image records from every active volume manifest.
+2. Find the current largest global category count.
+3. Estimate how many complete equal-count rounds fit within the remaining shared repository capacity, using observed category image sizes.
+4. Prioritize the most underrepresented categories and preserve a safety reserve.
+5. Stop when no additional complete equal-count round fits or eligible source material is exhausted.
+
+The registry is authoritative for the active balancing rule. Manifests are authoritative for actual files and counts. Do not copy old baseline counts into current documentation or code.
+
+## Storage and acquisition limits
+
+- Git object-store target: **8 GiB**.
+- New image limit: **45 MiB**.
+- Acquisition batch: up to **80 images / 700 MiB**.
+- The repository uses dynamic shared capacity; there are no fixed per-category folder quotas in the current registry policy.
+- A 512 MiB safety reserve protects repository metadata and size variance.
+- Cross-volume SHA-256 and source-title de-duplication are required.
+- Images must be landscape, at least 2560×1440, and JPEG, PNG or WebP.
+- Only Public Domain, CC0, CC BY and CC BY-SA metadata pass the automated license gate; NC and ND are excluded.
+
+No existing image is deleted, overwritten or moved to balance the collection.
+
+## Coordinated schedule
+
+Guarded population windows run at **00:17 and 12:17 UTC** only when Volume 02 has no active or queued acquisition run. The workflow checks the other public volume's Actions state before starting, keeping Wikimedia acquisition serialized across the library.
+
+The live hub registry is authoritative for current schedule, role and storage policy. Both the source API's rate limits and each asset's individual license/attribution requirements remain in force.
 
 ## Categories
 
 Nordic mythology and fantasy; cinematic nature; cosmic science fiction; Arctic blue and violet; monochrome futuristic architecture; red and violet dark fantasy; deep ocean and bioluminescence; obsidian minimalism and abstract geometry; unsorted.
 
-## Clone
+## Clone and synchronize
 
 ```bash
 git clone --depth=1 https://github.com/sunxsaturn/Fenrir-Wallpapers-03.git ~/Pictures/Fenrir-Wallpapers-03
 ```
 
-Use the hub registry to discover every active volume. Volume 01 remains archived at its original conservative budget. Volume 02 is the primary archive for existing files; this volume provides overflow capacity for categories whose folders are full or underrepresented. The existing Volume 02 Git history remains unchanged.
+For the complete collection, let Fenrir Dots discover every active volume from the hub registry:
+
+```bash
+fenrir-wallpaper sync-library --dry-run
+fenrir-wallpaper sync-library
+```
 
 ## Rights and attribution
 
-Every published file retains its Wikimedia Commons source page, creator/credit, license identifier and URL, dimensions, MIME type and SHA-256. Non-commercial, no-derivatives, missing-attribution and unsupported license records are excluded. Verify each source page and any additional rights notices before reuse.
+Every public image retains its creator/credit, source page, license identifier and URL, dimensions, MIME type and SHA-256 in the volume manifest. Automated metadata screening is not a legal warranty. Verify original source pages and additional rights notices before reuse.
