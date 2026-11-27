@@ -2,6 +2,12 @@ name: Populate Fenrir Wallpapers Volume 03
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/populate-wallpapers.yml"
+      - "tools/populate_commons_wallpapers.py"
   schedule:
     - cron: "17 0,12 * * *"
 
