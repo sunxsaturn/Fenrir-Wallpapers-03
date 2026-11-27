@@ -4,39 +4,25 @@
   "count": 167,
   "search_state": {
     "unsorted": {
-      "query_index": 9,
-      "offset": 200,
-      "last_query": "purple night landscape panorama",
+      "query_index": 4,
+      "offset": 300,
+      "last_query": "dark blue abstract landscape",
       "last_run_images_added": 0,
-      "last_run_pages_scanned": 12
+      "last_run_pages_scanned": 24
     },
     "obsidian-minimalism-abstract-geometry": {
-      "query_index": 10,
-      "offset": 50,
-      "last_query": "black geometric installation art",
+      "query_index": 4,
+      "offset": 350,
+      "last_query": "dark geometric sculpture",
       "last_run_images_added": 0,
-      "last_run_pages_scanned": 12
+      "last_run_pages_scanned": 24
     },
     "arctic-blue-violet": {
-      "query_index": 0,
-      "offset": 150,
-      "last_query": "aurora borealis landscape",
+      "query_index": 3,
+      "offset": 50,
+      "last_query": "blue glacier aerial photography",
       "last_run_images_added": 0,
-      "last_run_pages_scanned": 12
-    },
-    "nordic-mythology-fantasy": {
-      "query_index": 2,
-      "offset": 250,
-      "last_query": "Viking age archaeology",
-      "last_run_images_added": 9,
-      "last_run_pages_scanned": 1
-    },
-    "monochrome-futuristic-architecture": {
-      "query_index": 0,
-      "offset": 150,
-      "last_query": "brutalist architecture",
-      "last_run_images_added": 3,
-      "last_run_pages_scanned": 3
+      "last_run_pages_scanned": 24
     },
     "_category_start": 1
   },
