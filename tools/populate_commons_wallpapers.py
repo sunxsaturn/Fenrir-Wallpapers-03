@@ -465,11 +465,22 @@ def main() -> int:
 
     index = load_index()
     existing_shas, existing_titles, global_category_counts = gather_library_deduplication(index)
+    target_category_count = max(global_category_counts.values(), default=0)
     search_state = index.setdefault("search_state", {})
     # Volume 03 is overflow capacity for globally underrepresented categories.
     # 880 MiB × 9 categories = 7.734 GiB, leaving 272 MiB under the 8 GiB
     # repository guard for manifests, scripts and Git object overhead.
-    category_budgets = {category: 880 * 1024 * 1024 for category in CATEGORIES}
+    category_budgets = {
+        "nordic-mythology-fantasy": 550 * 1024 * 1024,
+        "cinematic-nature": 550 * 1024 * 1024,
+        "cosmic-science-fiction": 550 * 1024 * 1024,
+        "arctic-blue-violet": 1280 * 1024 * 1024,
+        "monochrome-futuristic-architecture": 550 * 1024 * 1024,
+        "red-violet-dark-fantasy": 550 * 1024 * 1024,
+        "deep-ocean-bioluminescence": 550 * 1024 * 1024,
+        "obsidian-minimalism-abstract-geometry": 1280 * 1024 * 1024,
+        "unsorted": 2560 * 1024 * 1024,
+    }
     folder_usage = {category: 0 for category in CATEGORIES}
     for item in index["items"]:
         if not isinstance(item, dict):
@@ -526,6 +537,12 @@ def main() -> int:
         ):
             break
         queries = CATEGORIES[category]
+        current_category_count = global_category_counts.get(category, 0)
+        category_remaining = max(0, target_category_count - current_category_count)
+        if category_remaining == 0:
+            reject("global_category_target_reached")
+            continue
+        category_add_limit = min(PER_CATEGORY_LIMIT, category_remaining)
         if folder_usage[category] >= category_budgets[category]:
             reject("category_budget_reached")
             continue
@@ -542,7 +559,7 @@ def main() -> int:
         pages_processed = 0
         query_text = queries[query_index]
         while (
-            category_added < PER_CATEGORY_LIMIT
+            category_added < category_add_limit
             and pages_processed < MAX_SEARCH_PAGES_PER_CATEGORY_PER_RUN
             and len(accepted) < args.max_new_images
             and download_attempts < MAX_DOWNLOAD_ATTEMPTS_PER_RUN
@@ -572,7 +589,7 @@ def main() -> int:
             for page in pages:
                 if (
                     len(accepted) >= args.max_new_images
-                    or category_added >= PER_CATEGORY_LIMIT
+                    or category_added >= category_add_limit
                     or download_attempts >= MAX_DOWNLOAD_ATTEMPTS_PER_RUN
                     or added_bytes >= MAX_DOWNLOAD_BYTES_PER_RUN
                     or run_budget_hit
@@ -701,6 +718,7 @@ def main() -> int:
                 added_bytes += len(payload)
                 folder_usage[category] += len(payload)
                 category_added += 1
+                global_category_counts[category] = global_category_counts.get(category, 0) + 1
                 time.sleep(0.35)
 
             next_offset = offset + PAGE_SIZE
@@ -748,6 +766,8 @@ def main() -> int:
         "repository_budget_bytes": MAX_REPOSITORY_BYTES,
         "category_budgets_bytes": category_budgets,
         "category_usage_bytes": folder_usage,
+        "global_target_category_count": target_category_count,
+        "global_category_counts_after": global_category_counts,
         "download_attempts": download_attempts,
         "search_pages": search_pages,
         "rejected": rejected,
