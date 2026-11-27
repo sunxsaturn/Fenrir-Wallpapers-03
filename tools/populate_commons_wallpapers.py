@@ -777,3 +777,5 @@ if __name__ == "__main__":
 # Continue filling Nordic, Obsidian and Unsorted to their configured folder targets.
 
 # Final near-capacity pass: continue least-filled folders until the 8 GiB guard stops imports.
+
+# Volume 03 bootstrap: scheduled acquisition coordinator.
