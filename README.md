@@ -8,9 +8,9 @@ A public image-storage volume in the combined Fenrir wallpaper library.
 
 - Target Git object store: **8 GiB**.
 - Individual image limit: **45 MiB**.
-- Acquisition batch: up to **80 images / 700 MiB**.
-- Themed category folders target **700 MiB each**; **Unsorted** targets **512 MiB**. The repository-wide 8 GiB limit is always authoritative.
-- Batches prioritize the least-filled folders and rotate tie order.
+- Acquisition batch: up to **80 images / 700 MiB per sequential batch**.
+- Each of the nine category folders has an **880 MiB** local target (7.734 GiB total planned folder capacity). The repository-wide 8 GiB Git-object limit remains the hard stop.
+- Batches prioritize the globally least-populated category across all active volumes (image count first, local folder usage second), then rotate ties.
 - Scheduled sequential Wikimedia Commons acquisition, coordinated as the library's only scheduled downloader.
 - Cross-volume SHA-256 and source-title de-duplication against every active Fenrir volume.
 - Image minimum: 2560×1440 landscape; JPEG, PNG or WebP.
@@ -29,7 +29,7 @@ Nordic mythology and fantasy; cinematic nature; cosmic science fiction; Arctic b
 git clone --depth=1 https://github.com/sunxsaturn/Fenrir-Wallpapers-03.git ~/Pictures/Fenrir-Wallpapers-03
 ```
 
-Use the hub registry to discover every active volume. Volume 01 remains archived at its original conservative budget. Volume 02's scheduled acquisition is paused while this volume runs the single scheduled Commons acquisition coordinator; its existing files remain unchanged.
+Use the hub registry to discover every active volume. Volume 01 remains archived at its original conservative budget. Volume 02 is the primary archive for existing files; this volume provides overflow capacity for categories whose folders are full or underrepresented. The existing Volume 02 Git history remains unchanged.
 
 ## Rights and attribution
 
