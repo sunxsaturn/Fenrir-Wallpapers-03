@@ -465,11 +465,14 @@ def fetch_public_json(url: str) -> dict:
     return payload
 
 
-def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str], dict[str, int]]:
-    """Read every active volume once and count globally unique assets by category."""
+def gather_library_deduplication(
+    local_index: dict,
+) -> tuple[set[str], set[str], dict[str, int], dict[str, int]]:
+    """Read all active volumes and count unique assets and bytes by category."""
     known_shas: set[str] = set()
     known_titles: set[str] = set()
     category_counts: dict[str, int] = {}
+    category_bytes: dict[str, int] = {}
     counted_assets: set[str] = set()
 
     def absorb(payload: dict) -> None:
@@ -501,6 +504,9 @@ def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str],
                 continue
             counted_assets.add(identity)
             category_counts[category] = category_counts.get(category, 0) + 1
+            item_size = item.get("file_size_bytes")
+            if isinstance(item_size, int) and not isinstance(item_size, bool) and item_size > 0:
+                category_bytes[category] = category_bytes.get(category, 0) + item_size
 
     # The local index may contain uncommitted state; absorb it first. The
     # identity set prevents the same manifest being counted again via registry.
@@ -515,7 +521,7 @@ def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str],
             if not isinstance(url, str):
                 raise ValueError("registered volume has no manifest URL")
             absorb(fetch_public_json(url))
-    return known_shas, known_titles, category_counts
+    return known_shas, known_titles, category_counts, category_bytes
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -525,23 +531,17 @@ def main() -> int:
         raise SystemExit("--max-new-images must be between 1 and 80")
 
     index = load_index()
-    existing_shas, existing_titles, global_category_counts = gather_library_deduplication(index)
-    starting_global_max_count = max(global_category_counts.values(), default=0)
+    existing_shas, existing_titles, global_category_counts, global_category_bytes = (
+        gather_library_deduplication(index)
+    )
+    starting_global_max_count = max(
+        (global_category_counts.get(category, 0) for category in CATEGORIES),
+        default=0,
+    )
     search_state = index.setdefault("search_state", {})
-    # Volume 03 provides extra capacity for categories below the current
-    # largest global image count. These folder budgets total about 6.98 GiB,
-    # leaving roughly 1 GiB under the 8 GiB repository guard for Git overhead.
-    category_budgets = {
-        "nordic-mythology-fantasy": 450 * 1024 * 1024,
-        "cinematic-nature": 450 * 1024 * 1024,
-        "cosmic-science-fiction": 450 * 1024 * 1024,
-        "arctic-blue-violet": 1200 * 1024 * 1024,
-        "monochrome-futuristic-architecture": 450 * 1024 * 1024,
-        "red-violet-dark-fantasy": 450 * 1024 * 1024,
-        "deep-ocean-bioluminescence": 450 * 1024 * 1024,
-        "obsidian-minimalism-abstract-geometry": 1050 * 1024 * 1024,
-        "unsorted": 2200 * 1024 * 1024,
-    }
+    # Shared repository storage is allocated to preserve equal image counts;
+    # per-folder quotas do not constrain the common target.
+    category_budgets = {category: MAX_REPOSITORY_BYTES for category in CATEGORIES}
     folder_usage = {category: 0 for category in CATEGORIES}
     for item in index["items"]:
         if not isinstance(item, dict):
@@ -574,8 +574,51 @@ def main() -> int:
     )
     start_size = git_object_bytes()
     available_budget = MAX_REPOSITORY_BYTES - start_size
-    if available_budget <= 2 * 1024 * 1024:
-        print(json.dumps({"status": "repository_budget_reached", "git_object_bytes": start_size}))
+    repository_safety_reserve = 512 * 1024 * 1024
+    usable_budget = max(0, available_budget - repository_safety_reserve)
+    average_image_bytes = {
+        category: max(
+            1,
+            int(
+                global_category_bytes.get(category, 0)
+                / max(1, global_category_counts.get(category, 0))
+            ),
+        )
+        for category in CATEGORIES
+    }
+
+    def projected_bytes_for_equal_count(target_count: int) -> int:
+        return sum(
+            max(0, target_count - global_category_counts.get(category, 0))
+            * average_image_bytes[category]
+            for category in CATEGORIES
+        )
+
+    # Find the highest shared image count supportable by the remaining
+    # repository storage. This target grows automatically when all folders
+    # reach the current common count.
+    low = starting_global_max_count
+    high = max(low + 1, 1)
+    while projected_bytes_for_equal_count(high) <= usable_budget:
+        low = high
+        high = max(high + 1, high * 2)
+    left, right = low, high
+    while left < right:
+        middle = (left + right + 1) // 2
+        if projected_bytes_for_equal_count(middle) <= usable_budget:
+            left = middle
+        else:
+            right = middle - 1
+    target_category_count = left
+
+    if target_category_count <= starting_global_max_count:
+        print(json.dumps({
+            "status": "repository_budget_reached",
+            "git_object_bytes": start_size,
+            "available_budget_bytes": available_budget,
+            "safety_reserve_bytes": repository_safety_reserve,
+            "equal_category_count": starting_global_max_count,
+        }))
         return 0
 
     accepted: list[dict] = []
@@ -599,7 +642,7 @@ def main() -> int:
             break
         queries = CATEGORIES[category]
         current_category_count = global_category_counts.get(category, 0)
-        category_remaining = max(0, starting_global_max_count - current_category_count)
+        category_remaining = max(0, target_category_count - current_category_count)
         if category_remaining == 0:
             reject("global_category_target_reached")
             continue
@@ -731,9 +774,10 @@ def main() -> int:
                 if folder_usage[category] + len(payload) > category_budgets[category]:
                     reject("category_budget_would_be_exceeded")
                     continue
-                if len(payload) > available_budget - added_bytes - 2 * 1024 * 1024:
-                    reject("repository_budget_would_be_exceeded")
-                    continue
+                if len(payload) > available_budget - added_bytes - repository_safety_reserve:
+                    reject("repository_budget_reserve_would_be_exceeded")
+                    run_budget_hit = True
+                    break
 
                 digest = hashlib.sha256(payload).hexdigest()
                 if digest in existing_shas:
@@ -827,7 +871,11 @@ def main() -> int:
         "repository_budget_bytes": MAX_REPOSITORY_BYTES,
         "category_budgets_bytes": category_budgets,
         "category_usage_bytes": folder_usage,
-        "global_target_category_count": starting_global_max_count,
+        "global_max_category_count_before": starting_global_max_count,
+        "global_equal_count_capacity_target": target_category_count,
+        "average_image_bytes_by_category": average_image_bytes,
+        "projected_bytes_to_equal_count_target": projected_bytes_for_equal_count(target_category_count),
+        "repository_safety_reserve_bytes": repository_safety_reserve,
         "global_category_counts_after": global_category_counts,
         "download_attempts": download_attempts,
         "search_pages": search_pages,
