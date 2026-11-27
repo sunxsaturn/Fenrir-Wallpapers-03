@@ -9,8 +9,8 @@ A public overflow image-storage volume in the combined Fenrir wallpaper library,
 - Target Git object store: **8 GiB**.
 - Individual image limit: **45 MiB**.
 - Acquisition batch: up to **80 images / 700 MiB per sequential batch**.
-- The count target is the current largest category across all active volumes (currently **185 committed images**). Each folder receives only enough new images to reach that count. No existing image is deleted.
-- Folder storage ceilings are sized for the remaining count gap: Arctic **1,200 MiB**, Obsidian **1,050 MiB**, Unsorted **2,200 MiB**, and the other six categories **450 MiB each**. The repository-wide 8 GiB Git-object limit remains the hard stop.
+- The count target is the current largest category across all active volumes (currently **185 committed images**, Cinematic Nature). Each category receives only enough new, unique images to reach that count. No existing image is deleted.
+- Folder storage ceilings are sized for the remaining count gap: Arctic **1,200 MiB**, Obsidian **1,050 MiB**, Unsorted **2,200 MiB**, and the other six categories **450 MiB each** (about **6.98 GiB** planned folder capacity). The repository-wide 8 GiB Git-object limit remains the hard stop.
 - Each batch targets the globally largest current category count, prioritizes the most underfilled categories, respects folder/repository storage ceilings, and stops adding to any category once it reaches the target.
 - Scheduled sequential Wikimedia Commons acquisition, coordinated as the library's only scheduled downloader.
 - Cross-volume SHA-256 and source-title de-duplication against every active Fenrir volume.
