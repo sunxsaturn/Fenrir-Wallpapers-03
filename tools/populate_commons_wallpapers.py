@@ -471,15 +471,15 @@ def main() -> int:
     # 880 MiB × 9 categories = 7.734 GiB, leaving 272 MiB under the 8 GiB
     # repository guard for manifests, scripts and Git object overhead.
     category_budgets = {
-        "nordic-mythology-fantasy": 550 * 1024 * 1024,
-        "cinematic-nature": 550 * 1024 * 1024,
-        "cosmic-science-fiction": 550 * 1024 * 1024,
-        "arctic-blue-violet": 1280 * 1024 * 1024,
-        "monochrome-futuristic-architecture": 550 * 1024 * 1024,
-        "red-violet-dark-fantasy": 550 * 1024 * 1024,
-        "deep-ocean-bioluminescence": 550 * 1024 * 1024,
-        "obsidian-minimalism-abstract-geometry": 1280 * 1024 * 1024,
-        "unsorted": 2560 * 1024 * 1024,
+        "nordic-mythology-fantasy": 450 * 1024 * 1024,
+        "cinematic-nature": 450 * 1024 * 1024,
+        "cosmic-science-fiction": 450 * 1024 * 1024,
+        "arctic-blue-violet": 1200 * 1024 * 1024,
+        "monochrome-futuristic-architecture": 450 * 1024 * 1024,
+        "red-violet-dark-fantasy": 450 * 1024 * 1024,
+        "deep-ocean-bioluminescence": 450 * 1024 * 1024,
+        "obsidian-minimalism-abstract-geometry": 1050 * 1024 * 1024,
+        "unsorted": 2200 * 1024 * 1024,
     }
     folder_usage = {category: 0 for category in CATEGORIES}
     for item in index["items"]:
