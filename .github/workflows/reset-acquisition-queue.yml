@@ -1,0 +1,39 @@
+name: Reset wallpaper acquisition queue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reset-acquisition-queue.yml"
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Cancel only the stale overlapping acquisition runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          api="https://api.github.com/repos/${GH_REPOSITORY}"
+          for run_id in 45922964678 45923720169; do
+            code="$(curl -sS -o "$RUNNER_TEMP/cancel-${run_id}.json" -w '%{http_code}' -X POST \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "${api}/actions/runs/${run_id}/cancel")"
+            echo "Volume 03 run ${run_id}: HTTP ${code}"
+            case "$code" in 202|204|404|409|422) ;; *) cat "$RUNNER_TEMP/cancel-${run_id}.json"; exit 1 ;; esac
+          done
+          code="$(curl -sS -o "$RUNNER_TEMP/cancel-v2.json" -w '%{http_code}' -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${api}/actions/runs/45923716427/cancel")"
+          echo "Volume 02 run 45923716427: HTTP ${code}"
+          case "$code" in 202|204|404|409|422) ;; *) cat "$RUNNER_TEMP/cancel-v2.json"; exit 1 ;; esac
