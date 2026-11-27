@@ -13,9 +13,10 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
-  group: fenrir-wallpaper-population-volume-03
+  group: fenrir-wallpaper-population-volume-03-fresh
   cancel-in-progress: false
 
 jobs:
@@ -23,6 +24,48 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
+      - name: Cancel stale queued and running acquisition jobs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          CURRENT_RUN_ID: ${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          runs="$(gh api "repos/${REPOSITORY}/actions/runs?per_page=100")"
+          stale_ids="$(printf '%s' "$runs" | jq -r --arg current "$CURRENT_RUN_ID" '
+            .workflow_runs[]
+            | select((.id | tostring) != $current)
+            | select(.path == ".github/workflows/populate-wallpapers.yml")
+            | select(["queued","in_progress","pending","requested","waiting"] | index(.status))
+            | .id
+          ')"
+          if [ -n "$stale_ids" ]; then
+            while IFS= read -r run_id; do
+              [ -n "$run_id" ] || continue
+              echo "Cancelling stale acquisition run $run_id"
+              if ! gh api --method POST "repos/${REPOSITORY}/actions/runs/${run_id}/cancel" >/dev/null 2>&1; then
+                gh api --method POST "repos/${REPOSITORY}/actions/runs/${run_id}/force-cancel" >/dev/null
+              fi
+            done <<< "$stale_ids"
+          else
+            echo "No stale acquisition runs to cancel."
+          fi
+          for attempt in 1 2 3 4 5; do
+            active="$(gh api "repos/${REPOSITORY}/actions/runs?per_page=100" | jq --arg current "$CURRENT_RUN_ID" '
+              [.workflow_runs[]
+               | select((.id | tostring) != $current)
+               | select(.path == ".github/workflows/populate-wallpapers.yml")
+               | select(["queued","in_progress","pending","requested","waiting"] | index(.status))]
+              | length
+            ')"
+            [ "$active" -eq 0 ] && break
+            sleep 3
+          done
+          if [ "$active" -ne 0 ]; then
+            echo "Stale acquisition runs remain active: $active"
+            exit 1
+          fi
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -51,6 +94,18 @@ jobs:
           fi
       - name: Validate importer syntax
         run: python -m py_compile tools/populate_commons_wallpapers.py
+      - name: Reset saved search queues without touching wallpaper files
+        if: steps.volume02_gate.outputs.should_run == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("manifest/index.json")
+          index = json.loads(path.read_text(encoding="utf-8"))
+          index["search_state"] = {}
+          path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("Reset search cursors; preserved all committed image records.")
+          PY
       - name: Fill all folders in sequential bounded batches
         if: steps.volume02_gate.outputs.should_run == 'true'
         shell: bash
