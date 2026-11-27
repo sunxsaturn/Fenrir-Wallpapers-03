@@ -1,6 +1,6 @@
 # Fenrir Wallpapers — Volume 03
 
-A public image-storage volume in the combined Fenrir wallpaper library.
+A public overflow image-storage volume in the combined Fenrir wallpaper library, designed to bring every category up to the largest category's global committed image count.
 
 **Current collection:** the live wallpaper count is recorded in [manifest/index.json](./manifest/index.json). The authoritative list of volumes is [the hub registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json).
 
@@ -9,8 +9,9 @@ A public image-storage volume in the combined Fenrir wallpaper library.
 - Target Git object store: **8 GiB**.
 - Individual image limit: **45 MiB**.
 - Acquisition batch: up to **80 images / 700 MiB per sequential batch**.
-- Each of the nine category folders has an **880 MiB** local target (7.734 GiB total planned folder capacity). The repository-wide 8 GiB Git-object limit remains the hard stop.
-- Batches prioritize the globally least-populated category across all active volumes (image count first, local folder usage second), then rotate ties.
+- The count target is the current largest category across all active volumes (currently **185 committed images**). Each folder receives only enough new images to reach that count. No existing image is deleted.
+- Folder storage ceilings are sized for the remaining count gap: Arctic **1,200 MiB**, Obsidian **1,050 MiB**, Unsorted **2,200 MiB**, and the other six categories **450 MiB each**. The repository-wide 8 GiB Git-object limit remains the hard stop.
+- Each batch targets the globally largest current category count, prioritizes the most underfilled categories, respects folder/repository storage ceilings, and stops adding to any category once it reaches the target.
 - Scheduled sequential Wikimedia Commons acquisition, coordinated as the library's only scheduled downloader.
 - Cross-volume SHA-256 and source-title de-duplication against every active Fenrir volume.
 - Image minimum: 2560×1440 landscape; JPEG, PNG or WebP.
