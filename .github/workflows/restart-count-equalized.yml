@@ -1,0 +1,39 @@
+name: Restart count-equalized acquisition
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/restart-count-equalized.yml"
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Replace previous run with corrected cursor-aware coordinator
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          api="https://api.github.com/repos/${GH_REPOSITORY}"
+          run_id=45924896798
+          code="$(curl -sS -o "$RUNNER_TEMP/cancel.json" -w '%{http_code}' -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" "${api}/actions/runs/${run_id}/cancel")"
+          case "$code" in 202|204|404|409|422) ;; *) cat "$RUNNER_TEMP/cancel.json"; exit 1 ;; esac
+          for attempt in $(seq 1 30); do
+            status="$(curl -fsS -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" "${api}/actions/runs/${run_id}" | jq -r '.status')"
+            [ "$status" = "completed" ] && break
+            sleep 2
+          done
+          curl -fsS -X POST -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${api}/actions/workflows/populate-wallpapers.yml/dispatches" -d '{"ref":"main"}'
