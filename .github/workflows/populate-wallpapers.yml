@@ -50,7 +50,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          max_batches=12
+          max_batches=24
           consecutive_empty_batches=0
           max_consecutive_empty_batches=3
           for ((batch=1; batch<=max_batches; batch++)); do
