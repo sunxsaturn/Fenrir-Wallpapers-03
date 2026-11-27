@@ -43,6 +43,8 @@ jobs:
             echo "should_run=true" >> "$GITHUB_OUTPUT"
             echo "Volume 02 is idle; Volume 03 may acquire."
           fi
+      - name: Validate importer syntax
+        run: python -m py_compile tools/populate_commons_wallpapers.py
       - name: Fill all folders in sequential bounded batches
         if: steps.volume02_gate.outputs.should_run == 'true'
         shell: bash
