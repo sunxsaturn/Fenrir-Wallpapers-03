@@ -1,59 +1,36 @@
 # Fenrir Wallpapers — Volume 03
 
-**Library navigation:** [Hub documentation](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/README.md) · [Live volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json) · [Fenrir project map](https://github.com/sunxsaturn/Fenrir-Arch/blob/main/docs/PROJECT-MAP.md) · [Desktop multi-volume sync](https://github.com/sunxsaturn/Fenrir-Dots/blob/main/docs/WALLPAPER-LIBRARY.md)
+**Library navigation:** [Hub documentation](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/README.md) · [Closed population status](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/POPULATION-STATUS.md) · [Live volume registry](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/manifest/volumes.json) · [Desktop sync guide](https://github.com/sunxsaturn/Fenrir-Dots/blob/main/docs/WALLPAPER-LIBRARY.md)
 
-A public overflow image-storage volume in the combined Fenrir wallpaper library. Its current role is **balanced population**: add unique images to the categories that are most underrepresented across all active volume manifests.
+Volume 03 is a published, immutable image-storage volume in the Fenrir public wallpaper library. It contains **605 committed wallpapers** and remains active for desktop synchronization.
 
-## Current role and balancing
+## Population status
 
-The hub registry currently marks Volume 03 as active and acquisition-enabled for balanced population.
+**Closed on 2026-11-27.** The scheduled and manual acquisition workflow has been removed. No new source acquisition, category balancing, image-count quota or extra volume is planned. Existing files and manifest records remain unchanged and available to registry-driven desktop sync.
 
-The target is dynamic, not a fixed historical image count:
+## Existing storage and rights
 
-1. Read committed image records from every active volume manifest.
-2. Find the current largest global category count.
-3. Estimate how many complete equal-count rounds fit within the remaining shared repository capacity, using observed category image sizes.
-4. Prioritize the most underrepresented categories and preserve a safety reserve.
-5. Stop when no additional complete equal-count round fits or eligible source material is exhausted.
-
-The registry is authoritative for the active balancing rule. Manifests are authoritative for actual files and counts. Do not copy old baseline counts into current documentation or code.
-
-## Storage and acquisition limits
-
-- Git object-store target: **8 GiB**.
-- New image limit: **45 MiB**.
-- Acquisition batch: up to **80 images / 700 MiB**.
-- The repository uses dynamic shared capacity; there are no fixed per-category folder quotas in the current registry policy.
-- A 512 MiB safety reserve protects repository metadata and size variance.
-- Cross-volume SHA-256 and source-title de-duplication are required.
-- Images must be landscape, at least 2560×1440, and JPEG, PNG or WebP.
-- Only Public Domain, CC0, CC BY and CC BY-SA metadata pass the automated license gate; NC and ND are excluded.
-
-No existing image is deleted, overwritten or moved to balance the collection.
-
-## Coordinated schedule
-
-Guarded population windows run at **00:17 and 12:17 UTC** only when Volume 02 has no active or queued acquisition run. The workflow checks the other public volume's Actions state before starting, keeping Wikimedia acquisition serialized across the library.
-
-The live hub registry is authoritative for current schedule, role and storage policy. Both the source API's rate limits and each asset's individual license/attribution requirements remain in force.
+- All published image files use content-addressed names and remain in their committed category folders.
+- Cross-volume SHA-256 de-duplication was checked against the current three-volume library.
+- Public images retain creator/credit, source, attribution, license, dimensions, MIME type and integrity metadata.
+- The committed manifest is authoritative for the volume's current image records.
+- No image is deleted, overwritten, moved or copied into another category to make counts equal.
+- Existing licenses and source/provider requirements still apply; publication does not grant additional reuse rights.
 
 ## Categories
 
-Nordic mythology and fantasy; cinematic nature; cosmic science fiction; Arctic blue and violet; monochrome futuristic architecture; red and violet dark fantasy; deep ocean and bioluminescence; obsidian minimalism and abstract geometry; unsorted.
+Arctic blue/violet; cinematic nature; cosmic science fiction; deep ocean/bioluminescence; monochrome futuristic architecture; Nordic mythology/fantasy; obsidian minimalism/abstract geometry; red/violet dark fantasy; unsorted.
 
-## Clone and synchronize
+## Synchronize the complete library
 
-```bash
-git clone --depth=1 https://github.com/sunxsaturn/Fenrir-Wallpapers-03.git ~/Pictures/Fenrir-Wallpapers-03
-```
-
-For the complete collection, let Fenrir Dots discover every active volume from the hub registry:
+Do not clone a hard-coded volume list. Let Fenrir Dots read the hub registry:
 
 ```bash
+fenrir-wallpaper audit-library --json
 fenrir-wallpaper sync-library --dry-run
 fenrir-wallpaper sync-library
 ```
 
-## Rights and attribution
+The audit checks manifests only; the preview is read-only. The separately confirmed sync downloads already-published manifest entries, verifies downloaded bytes and preserves existing local files.
 
-Every public image retains its creator/credit, source page, license identifier and URL, dimensions, MIME type and SHA-256 in the volume manifest. Automated metadata screening is not a legal warranty. Verify original source pages and additional rights notices before reuse.
+See the [hub population status](https://github.com/sunxsaturn/Fenrir-Wallpapers/blob/main/docs/POPULATION-STATUS.md) for the 1,871-image library snapshot and category distribution.
