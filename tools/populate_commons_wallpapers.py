@@ -404,9 +404,12 @@ def fetch_public_json(url: str) -> dict:
     return payload
 
 
-def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str]]:
+def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str], dict[str, int]]:
+    """Read every active volume once and count globally unique assets by category."""
     known_shas: set[str] = set()
     known_titles: set[str] = set()
+    category_counts: dict[str, int] = {}
+    counted_assets: set[str] = set()
 
     def absorb(payload: dict) -> None:
         records = payload.get("items")
@@ -416,12 +419,30 @@ def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str]]
             if not isinstance(item, dict):
                 continue
             digest = item.get("sha256")
-            if isinstance(digest, str) and SHA_RE.fullmatch(digest):
+            valid_digest = isinstance(digest, str) and SHA_RE.fullmatch(digest)
+            if valid_digest:
                 known_shas.add(digest)
             title = normalize_title(item.get("title") or item.get("commons_title"))
             if title:
                 known_titles.add(title)
 
+            item_path = item.get("path")
+            if not isinstance(item_path, str):
+                continue
+            parts = Path(item_path).parts
+            if len(parts) < 3 or parts[0] != "Fenrir Wallpapers":
+                continue
+            category = parts[1]
+            if category not in CATEGORIES:
+                continue
+            identity = digest if valid_digest else (f"title:{title}" if title else f"path:{item_path}")
+            if identity in counted_assets:
+                continue
+            counted_assets.add(identity)
+            category_counts[category] = category_counts.get(category, 0) + 1
+
+    # The local index may contain uncommitted state; absorb it first. The
+    # identity set prevents the same manifest being counted again via registry.
     absorb(local_index)
     registry = fetch_public_json(VOLUME_REGISTRY_URL)
     volumes = registry.get("volumes")
@@ -433,7 +454,7 @@ def gather_library_deduplication(local_index: dict) -> tuple[set[str], set[str]]
             if not isinstance(url, str):
                 raise ValueError("registered volume has no manifest URL")
             absorb(fetch_public_json(url))
-    return known_shas, known_titles
+    return known_shas, known_titles, category_counts
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -443,12 +464,12 @@ def main() -> int:
         raise SystemExit("--max-new-images must be between 1 and 80")
 
     index = load_index()
-    existing_shas, existing_titles = gather_library_deduplication(index)
+    existing_shas, existing_titles, global_category_counts = gather_library_deduplication(index)
     search_state = index.setdefault("search_state", {})
-    category_budgets = {
-        category: (512 * 1024 * 1024 if category == "unsorted" else 700 * 1024 * 1024)
-        for category in CATEGORIES
-    }
+    # Volume 03 is overflow capacity for globally underrepresented categories.
+    # 880 MiB × 9 categories = 7.734 GiB, leaving 272 MiB under the 8 GiB
+    # repository guard for manifests, scripts and Git object overhead.
+    category_budgets = {category: 880 * 1024 * 1024 for category in CATEGORIES}
     folder_usage = {category: 0 for category in CATEGORIES}
     for item in index["items"]:
         if not isinstance(item, dict):
@@ -474,7 +495,10 @@ def main() -> int:
     # tie-breaker prevents stable dictionary order from starving a category.
     ordered_categories = sorted(
         rotated_categories,
-        key=lambda name: folder_usage[name] / category_budgets[name],
+        key=lambda name: (
+            global_category_counts.get(name, 0),
+            folder_usage[name] / category_budgets[name],
+        ),
     )
     start_size = git_object_bytes()
     available_budget = MAX_REPOSITORY_BYTES - start_size
